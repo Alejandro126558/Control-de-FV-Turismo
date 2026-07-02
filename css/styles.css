@@ -1,0 +1,247 @@
+/* ==========================================================================
+   ESTILOS NAVBAR Y HERO - MÁXIMO CONTRASTE Y LÍNEAS LIMPIAS
+   ========================================================================== */
+
+/* Navbar: Blanco corporativo limpio con excelente contraste */
+.navbar {
+    background-color: #ffffff !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08); /* Sutil separación del fondo */
+    padding: 0.8rem 0;
+}
+
+.navbar .navbar-brand {
+    color: #0284c7 !important; /* Azul Satelital Principal */
+    font-weight: 800;
+}
+
+.navbar .navbar-brand span {
+    color: #0f172a !important; /* Texto oscuro complementario */
+}
+
+.navbar .nav-link {
+    color: #475569 !important; /* Gris corporativo legible */
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.navbar .nav-link:hover, 
+.navbar .nav-link.active {
+    color: #0284c7 !important; /* Resalte en azul al pasar el cursor */
+}
+
+/* Sección Hero con la imagen de fondo de FlotaTurismo y Opacidad Controlada */
+.hero-section {
+    position: relative; /* Obligatorio para posicionar el gradiente de fondo */
+    background: url('../img/hero_main_bg.png') no-repeat center center / cover;
+    padding: 120px 0 80px 0; /* Margen superior para no quedar oculto bajo el navbar fijo */
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e2e8f0;
+    z-index: 1;
+}
+
+/* Capa de opacidad sobre el fondo: Aclara y unifica la imagen trasera 
+   para que tus textos oscuros originales resalten sin problemas */
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Gradiente translúcido suave que protege la legibilidad del texto izquierdo */
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.6) 100%);
+    z-index: -1; /* Se ubica detrás del texto y la consola, pero frente a la foto */
+}
+
+/* Badge de Logística: Contenedor claro de alta legibilidad */
+.hero-section .badge {
+    background-color: #e2f5ea !important; /* Verde menta suave */
+    color: #15803d !important; /* Verde esmeralda oscuro (Psicología: Vía libre y seguridad vial) */
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    font-weight: 700;
+}
+
+/* Título Principal: Azul Pizarra Profundo (Líneas sólidas, cero sombras, contraste nítido) */
+.hero-title {
+    color: #0f172a !important; /* Azul noche / pizarra de alta jerarquía */
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+/* Párrafo Descriptivo: Gris Oscuro Sólido para evitar el efecto difuminado */
+.hero-section p.lead {
+    color: #334155 !important; /* Contraste perfecto sobre el fondo sin verse agresivo */
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+/* Botón Secundario "Ver Reservas": Adaptado a la paleta sólida oscura */
+.btn-reserva-hero {
+    background-color: transparent;
+    border: 2px solid #0f172a;
+    color: #0f172a !important;
+    font-weight: 700;
+    border-radius: 10px;
+    transition: all 0.25s ease;
+}
+
+.btn-reserva-hero:hover {
+    background-color: #0f172a;
+    color: #ffffff !important; /* Invierte colores al hacer hover */
+    box-shadow: 0 8px 15px rgba(15, 23, 42, 0.2);
+}
+
+/* ESTILOS DE LA PANTALLA DE INICIO DE SESIÓN (LOGIN) */
+.image-side {
+    background-image: url('../img/imagen.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(240, 253, 244, 0.5) 0%, rgba(248, 250, 252, 0.4) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    transition: background 0.3s ease; 
+}
+
+.text-overlay > div {
+    z-index: 2;
+}
+
+/* CONSOLA DE TELEMETRÍA */
+.telematics-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.06);
+}
+.map-container {
+    height: 250px;
+    border: 1px solid #e2e8f0;
+    background-color: #f1f5f9;
+}
+.map-overlay-card {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    background-color: rgba(255, 255, 255, 0.98);
+    min-width: 240px;
+    border-left: 4px solid var(--success);
+    border-radius: 8px;
+}
+.metric-box {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s ease;
+}
+.metric-box:hover {
+    background-color: #ffffff;
+    border-color: var(--primary);
+}
+.pulse-indicator {
+    width: 10px;
+    height: 10px;
+    background-color: var(--success);
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 0 rgba(22, 163, 74, 0.4);
+    animation: pulseAnimation 2s infinite;
+}
+
+/* SECCIONES Y TARJETAS DE SERVICIOS */
+.service-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 20px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0 !important;
+}
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 30px rgba(15, 23, 42, 0.06) !important;
+    border-color: var(--primary) !important;
+}
+.icon-shape {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+}
+.bg-soft-primary { background-color: rgba(2, 132, 199, 0.1); color: var(--primary); }
+.bg-soft-success { background-color: rgba(22, 163, 74, 0.1); color: var(--success); }
+.bg-soft-danger { background-color: rgba(239, 68, 68, 0.1); color: #ef4848; }
+
+/* TABLAS OPERATIVAS */
+.table-dark-custom {
+    background-color: var(--secondary) !important; 
+}
+.table {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* SECCIÓN RUTA E ITINERARIOS CON FONDO CONTRACÍCLICO */
+.bg-mint-section {
+    background-color: var(--bg-mint);
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* FOOTER ROBUSTO PROFESIONAL ORIGINAL CON DETALLES DE LUZ */
+.footer-corporate {
+    background-color: var(--secondary);
+    border-top: 4px solid var(--primary);
+}
+.footer-links li {
+    margin-bottom: 0.6rem;
+}
+.footer-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+.footer-links a:hover {
+    color: var(--primary);
+}
+.social-icon {
+    width: 38px;
+    height: 38px;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+.social-icon:hover {
+    background-color: var(--primary);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* ANIMACIONES */
+@keyframes pulseAnimation {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(22, 163, 74, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(22, 163, 74, 0); }
+}
